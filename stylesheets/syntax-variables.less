@@ -1,7 +1,7 @@
 // Tron shades
 @tron-yellow-glow: #f7e052;
 @tron-orange-glow: #fbaf32;
-@tron-red-glow: #f3542e;
+@tron-red-glow: fade(#f3542e, 95%);
 @tron-blue-white-glow: #c7f3ff;
 @tron-green-glow: #47b9ba;
 @tron-blue-glow: #06cdcd;
@@ -46,10 +46,10 @@
 
 @syntax-comment-color: @tron-green-dark;
 @syntax-keyword-color: darken(saturate(@tron-blue-glow, 30%), 14%);
-@syntax-string-color: lighten(desaturate(@syntax-comment-color, 10%), 25%);
-@syntax-number-color: saturate(@tron-pale-blue, 10%);
-@syntax-float-color: saturate(@tron-pale-blue, 50%);
-@syntax-escaped-color: @syntax-number-color;
+@syntax-string-color: darken(@syntax-comment-color, 5%);
+@syntax-number-color: desaturate(@tron-red-glow, 20%);
+@syntax-float-color: lighten(desaturate(@tron-red-glow, 50%), 15%);
+@syntax-escaped-color: @syntax-string-color;
 @syntax-class-color: @tron-red-glow;
 @syntax-variable-color: desaturate(@tron-yellow-glow, 30%);
 @syntax-function-color: saturate(@tron-red-glow, 30%);

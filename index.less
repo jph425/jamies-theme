@@ -41,6 +41,7 @@
 
   .selection .region {
     background-color: @syntax-selection-color;
+    //border: 1px solid lighten(@syntax-selection-color, 0%);
   }
 
   .search-results .marker .region {
@@ -106,16 +107,27 @@
   color: @syntax-string-color;
 }
 
+.string.regexp {
+    color: lighten(@syntax-string-color, 30%);
+}
+
+.string.quoted.other.lt-gt.include {
+    color: @syntax-string-color;
+}
+
 .constant.numeric {
   color: @syntax-number-color;
+}
+
+.constant.numeric.float {
+  color: @syntax-float-color;
 }
 
 .constant.language {
   color: desaturate(@syntax-keyword-color, 10%);
 }
 
-.constant.character,
-.constant.other {
+.constant.character .constant.other {
   color: desaturate(darken(@syntax-number-color, 30%), 25%);
 }
 
@@ -129,12 +141,12 @@
 }
 
 .storage {
-  color: desaturate(darken(@syntax-keyword-color, 20%), 20%);
+  color: desaturate(darken(@syntax-keyword-color, 0%), 27%);
 }
 
 .storage.type {
   font-style: italic;
-  color: desaturate(darken(@syntax-keyword-color, 20%), 20%);
+  color: desaturate(darken(@syntax-keyword-color, 6%), 20%);
 }
 
 .entity.name.class {
@@ -152,13 +164,12 @@
   color: @syntax-function-color;
 }
 
-.entity.name.instance {
-  color: desaturate(@syntax-function-color, 30%);
+.entity.name.function.preprocessor {
+
 }
 
-.variable.parameter {
-  font-style: italic;
-  color: desaturate(@syntax-variable-color, 20%);
+.entity.name.instance {
+  color: desaturate(@syntax-function-color, 30%);
 }
 
 .entity.name.tag {
@@ -182,6 +193,68 @@
 .support.class {
   font-style: italic;
   color: @syntax-variable-color;
+}
+
+.variable {
+  color: desaturate(@syntax-variable-color, 60%);
+}
+
+.variable.language {
+    color: desaturate(@syntax-variable-color, 30%);
+}
+
+.variable.parameter {
+  font-style: italic;
+  color: saturate(@syntax-variable-color, 20%);
+}
+
+.variable.parameter.function {
+    font-style: italic;
+    color: saturate(@syntax-function-color, 20%);
+}
+
+//.meta.function-call {
+.support.function {
+    color: saturate(@syntax-function-color, 20%);
+}
+
+.meta.function-call.arguments {
+    //font-style: italic;
+    color: saturate(@syntax-variable-color, 20%);
+}
+
+.meta.preprocessor {
+    color: lighten(@syntax-comment-color, 20%);
+}
+
+.punctuation.separator {
+    color: @syntax-text-color;
+}
+
+.punctuation.definition {
+    color: @syntax-text-color;
+}
+
+.punctuation.definition.arguments {
+    color: @syntax-text-color;
+}
+
+.punctuation.definition.tuple,
+.punctuation.definition.dictionary,
+.punctuation.definition.list {
+    color: @syntax-variable-color;
+}
+
+.punctuation.definition.string {
+    color: @syntax-string-color;
+}
+
+.punctuation.definition.comment {
+    color: @syntax-comment-color;
+}
+
+.punctuation.section {
+    color: @syntax-text-color;
 }
 
 .invalid {
