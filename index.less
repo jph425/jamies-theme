@@ -133,7 +133,8 @@
 
 .constant.character.escape {
     //color: desaturate(darken(@syntax-escaped-color, 30%), 15%);
-    background-color: lighten(@syntax-background-color, 15%);
+    background-color: lighten(@syntax-background-color, 5%);
+    //border: 1px lighten(@syntax-background-color, 50%);
 }
 
 .keyword {
@@ -149,6 +150,11 @@
   color: desaturate(darken(@syntax-keyword-color, 6%), 20%);
 }
 
+.storage.type.class.todo {
+    font-style: italic;
+    color: @syntax-cursor-color;
+}
+
 .entity.name.class {
   text-decoration: underline;
   color: @syntax-class-color;
@@ -161,7 +167,7 @@
 }
 
 .entity.name.function {
-  color: @syntax-function-color;
+  color: lighten(@syntax-function-color, 20%);
 }
 
 .entity.name.function.preprocessor {
@@ -177,22 +183,22 @@
 }
 
 .entity.other.attribute-name {
-  //color: @syntax-variable-color;
-  color: @tron-orange-glow
+  color: @syntax-variable-color;
+  //color: @tron-orange-glow
 }
 
 .support.function {
-  color: @syntax-function-color;
+  color: spin(lighten(@syntax-function-color, 20%), -12);
 }
 
 .support.constant {
-  color: desaturate(@syntax-string-color, 20%);
+  color: spin(lighten(desaturate(@syntax-string-color, 10%), 5%), -12);
 }
 
 .support.type,
 .support.class {
   font-style: italic;
-  color: @syntax-variable-color;
+  color: desaturate(darken(@syntax-variable-color, 12%), 10%);
 }
 
 .variable {

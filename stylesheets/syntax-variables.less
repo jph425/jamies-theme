@@ -1,16 +1,46 @@
 // Tron shades
-@tron-yellow-glow: #f7e052;
-@tron-orange-glow: #fbaf32;
-@tron-red-glow: fade(#f3542e, 95%);
-@tron-blue-white-glow: #c7f3ff;
-@tron-green-glow: #47b9ba;
-@tron-blue-glow: #06cdcd;
-@tron-green-dark: #015a5c;
-@tron-pale-white: #f0fafb;
-@tron-pale-black: #101010;
-@tron-pale-blue: #9ad1df;
-@tron-sky: #023c55;
-@tron-metal: #578892;
+//@tron-yellow-glow: #f7e052;
+//@tron-orange-glow: #fbaf32;
+//@tron-red-glow: fade(#f3542e, 93%);
+//@tron-blue-white-glow: #c7f3ff;
+//@tron-green-glow: #47b9ba;
+//@tron-blue-glow: #06cdcd;
+//@tron-green-dark: #015a5c;
+//@tron-pale-white: #f0fafb;
+//@tron-pale-black: #101010;
+//@tron-pale-blue: #9ad1df;
+//@tron-sky: #023c55;
+//@tron-metal: #578892;
+
+// Low contrast colors
+@lc-1: #015a5c;  // very dark green
+@tron-green-dark: @lc-1;
+@lc-2: #101010;  // near black
+@tron-pale-black: @lc-2;
+@lc-3: #578892;  // medium bluish grey
+@tron-metal: @lc-3;
+@lc-4: #023c55;  // dark blue grey
+@tron-sky: @lc-4;
+@lc-5: #6b8fd4;  // medium pale blue
+@tron-pale-blue: @lc-5;
+@lc-6: #1144aa;  // medium dark blue
+@lc-7: #015c65;  // dark green
+@tron-green-glow: @lc-7;
+@lc-8: #028e9b;  // light pale green
+@tron-pale-white: @lc-8;
+@lc-9: #180773;  // dark purple
+@tron-green-glow: @lc-7;
+@lc-a: #2e16b1;  // dark blue
+@lc-b: #ffa700;  // bright orange accent
+@tron-orange-glow: @lc-b;
+@lc-c: #a66d00;  // pale brown accent
+@tron-yellow-glow: @lc-c;
+@lc-d: #35c0cd;  // bright cyan
+@tron-red-glow: @lc-d;
+@lc-e: #4575d4;  // medium blue
+@tron-blue-white-glow: @lc-e;
+@lc-f: #05296e;  // dark blue
+@tron-blue-glow: lighten(@lc-f, 10%);
 
 // General colors
 @syntax-text-color: saturate(darken(@tron-pale-white, 10%), 7%);
@@ -20,9 +50,9 @@
 @syntax-background-color: @tron-pale-black;
 
 // Guide colors
-@syntax-wrap-guide-color: rgba(255, 255, 255, .1);
-@syntax-indent-guide-color: rgba(255, 255, 255, .15);
-@syntax-invisible-character-color: rgba(197, 200, 198, .2);
+@syntax-wrap-guide-color: rgba(0, 180, 120, 0.2);
+@syntax-indent-guide-color: rgba(0, 100, 160, 0.25);
+@syntax-invisible-character-color: rgba(18, 213, 192, 0.45);
 
 // For find and replace markers
 @syntax-result-marker-color: desaturate(@tron-orange-glow, 50%);
@@ -44,12 +74,12 @@
 @syntax-markup-decoration-color: @tron-blue-white-glow;
 @syntax-markup-link-color: @tron-green-glow;
 
-@syntax-comment-color: @tron-green-dark;
-@syntax-keyword-color: darken(saturate(@tron-blue-glow, 30%), 14%);
-@syntax-string-color: darken(@syntax-comment-color, 5%);
-@syntax-number-color: desaturate(@tron-red-glow, 20%);
-@syntax-float-color: lighten(desaturate(@tron-red-glow, 50%), 15%);
+@syntax-comment-color: spin(@tron-green-dark, -35);
+@syntax-keyword-color: lighten(saturate(@tron-blue-glow, 30%), 10%);
+@syntax-string-color: darken(@syntax-comment-color, 3%);
+@syntax-number-color: spin(lighten(@tron-green-glow, 10%), -20);
+@syntax-float-color: lighten(desaturate(@syntax-number-color, 10%), 15%);
 @syntax-escaped-color: @syntax-string-color;
 @syntax-class-color: @tron-red-glow;
-@syntax-variable-color: desaturate(@tron-yellow-glow, 30%);
-@syntax-function-color: saturate(@tron-red-glow, 30%);
+@syntax-variable-color: lighten(desaturate(@tron-yellow-glow, 8%), 10%);
+@syntax-function-color: darken(saturate(@tron-red-glow, 3%), 18%);
