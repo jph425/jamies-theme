@@ -1,8 +1,23 @@
+// Tron shades
+@tron-yellow-glow: #f7e052;
+@tron-orange-glow: #fbaf32;
+@tron-red-glow: #f3542e;
+@tron-blue-white-glow: #c7f3ff;
+@tron-green-glow: #47b9ba;
+@tron-blue-glow: #06cdcd;
+@tron-green-dark: #015a5c;
+@tron-pale-white: #f0fafb;
+@tron-pale-black: #101010;
+@tron-pale-blue: #9ad1df;
+@tron-sky: #023c55;
+@tron-metal: #578892;
+
 // General colors
-@syntax-text-color: #F8F8F2;
-@syntax-cursor-color: #F8F8F0;
-@syntax-selection-color: #49483E;
-@syntax-background-color: #282828;
+@syntax-text-color: saturate(darken(@tron-pale-white, 10%), 7%);
+@syntax-cursor-color: @tron-orange-glow;
+@syntax-selection-color: fade(@syntax-cursor-color, 30%);
+//@syntax-background-color: #282828;
+@syntax-background-color: @tron-pale-black;
 
 // Guide colors
 @syntax-wrap-guide-color: rgba(255, 255, 255, .1);
@@ -10,8 +25,8 @@
 @syntax-invisible-character-color: rgba(197, 200, 198, .2);
 
 // For find and replace markers
-@syntax-result-marker-color: #888;
-@syntax-result-marker-color-selected: white;
+@syntax-result-marker-color: desaturate(@tron-orange-glow, 50%);
+@syntax-result-marker-color-selected: desaturate(@tron-yellow-glow, 50%);
 
 // Gutter colors
 @syntax-gutter-text-color: @syntax-text-color;
@@ -24,3 +39,17 @@
 @syntax-color-added: #529b2f;
 @syntax-color-modified: #E6DB74;
 @syntax-color-removed: #F92672;
+
+// Jamie's additions
+@syntax-markup-decoration-color: @tron-blue-white-glow;
+@syntax-markup-link-color: @tron-green-glow;
+
+@syntax-comment-color: @tron-green-dark;
+@syntax-keyword-color: darken(saturate(@tron-blue-glow, 30%), 14%);
+@syntax-string-color: lighten(desaturate(@syntax-comment-color, 10%), 25%);
+@syntax-number-color: saturate(@tron-pale-blue, 10%);
+@syntax-float-color: saturate(@tron-pale-blue, 50%);
+@syntax-escaped-color: @syntax-number-color;
+@syntax-class-color: @tron-red-glow;
+@syntax-variable-color: desaturate(@tron-yellow-glow, 30%);
+@syntax-function-color: saturate(@tron-red-glow, 30%);

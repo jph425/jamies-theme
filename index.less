@@ -21,6 +21,7 @@
   .gutter {
     background-color: @syntax-gutter-background-color;
 
+    // TODO huh? how does this work?
     .cursor-line {
       background-color: @syntax-gutter-background-color-selected;
     }
@@ -31,7 +32,7 @@
   }
 
   .invisible {
-    color: @syntax-text-color;
+    color: darken(@syntax-comment-color, 50%);
   }
 
   .cursor {
@@ -54,13 +55,17 @@
   .gfm {
     .markup {
       &.heading {
-        color: #A6E22E;
+        color: @syntax-markup-decoration-color;
         font-weight: bold;
       }
 
       &.underline {
-        color: #E6DB74;
+        color: @syntax-markup-decoration-color;
         text-decoration: underline;
+      }
+
+      &.quote {
+          color: darken(@syntax-markup-decoration-color, 20%);
       }
     }
 
@@ -72,6 +77,7 @@
       font-style: italic;
     }
 
+    // TODO what's this?
     .raw {
       color: #66D9EF;
     }
@@ -82,103 +88,110 @@
     }
 
     .link {
-      color: #CCC;
+      color: @syntax-markup-link-color;
 
       .entity {
-        color: #AE81FF;
+        color: desaturate(@syntax-markup-link-color, 50%);
       }
     }
   }
 }
 
 .comment {
-  color: #75715E;
+  color: @syntax-comment-color;
+  font-style: italic;
 }
 
 .string {
-  color: #E6DB74;
+  color: @syntax-string-color;
 }
 
 .constant.numeric {
-  color: #AE81FF;
+  color: @syntax-number-color;
 }
 
 .constant.language {
-  color: #AE81FF;
+  color: desaturate(@syntax-keyword-color, 10%);
 }
 
 .constant.character,
 .constant.other {
-  color: #AE81FF;
+  color: desaturate(darken(@syntax-number-color, 30%), 25%);
+}
+
+.constant.character.escape {
+    //color: desaturate(darken(@syntax-escaped-color, 30%), 15%);
+    background-color: lighten(@syntax-background-color, 15%);
 }
 
 .keyword {
-  color: #F92672;
+  color: @syntax-keyword-color;
 }
 
 .storage {
-  color: #F92672;
+  color: desaturate(darken(@syntax-keyword-color, 20%), 20%);
 }
 
 .storage.type {
   font-style: italic;
-  color: #66D9EF;
+  color: desaturate(darken(@syntax-keyword-color, 20%), 20%);
 }
 
 .entity.name.class {
   text-decoration: underline;
-  color: #A6E22E;
+  color: @syntax-class-color;
 }
 
 .entity.other.inherited-class {
   font-style: italic;
   text-decoration: underline;
-  color: #A6E22E;
+  color: @syntax-class-color;
 }
 
 .entity.name.function {
-  color: #A6E22E;
+  color: @syntax-function-color;
 }
 
 .entity.name.instance {
-  color: #66D9EF;
+  color: desaturate(@syntax-function-color, 30%);
 }
 
 .variable.parameter {
   font-style: italic;
-  color: #FD971F;
+  color: desaturate(@syntax-variable-color, 20%);
 }
 
 .entity.name.tag {
-  color: #F92672;
+  color: darken(@syntax-keyword-color, 20%);
 }
 
 .entity.other.attribute-name {
-  color: #A6E22E;
+  //color: @syntax-variable-color;
+  color: @tron-orange-glow
 }
 
 .support.function {
-  color: #66D9EF;
+  color: @syntax-function-color;
 }
 
 .support.constant {
-  color: #66D9EF;
+  color: desaturate(@syntax-string-color, 20%);
 }
 
 .support.type,
 .support.class {
   font-style: italic;
-  color: #66D9EF;
+  color: @syntax-variable-color;
 }
 
 .invalid {
-  color: #F8F8F0;
-  background-color: #F92672;
+  color: @tron-metal;
+  background-color: @tron-red-glow;
 }
 
 .invalid.deprecated {
-  color: #F8F8F0;
-  background-color: #AE81FF;
+  color: @tron-metal;
+  background-color: desaturate(@tron-red-glow, 20%);
 }
 
 // Jade syntax
