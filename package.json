@@ -1,10 +1,10 @@
 {
   "name": "jamies",
   "theme": "syntax",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Jamie's theme",
-  "repository": "https://github.com/jph425/monokai",
+  "repository": "https://github.com/jph425/jamies-theme",
   "license": "MIT",
   "engines": {
     "atom": ">0.39.0"
